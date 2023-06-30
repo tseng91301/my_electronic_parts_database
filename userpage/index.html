@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的電子零件資料庫</title>
+</head>
+<body>
+    <h1>我的電子零件資料庫</h1>
+    <div id="add_part">
+        <h2>元件添加：</h2>
+        <h4>名稱： <input type="text" id="add_part-name" required></h4>
+        <h4>數量： <input type="number" id="add_part-num" required></h4>
+        <h4>存放位置： <input type="text" id="add_part-loc" required></h4>
+        <h4>其他說明： <textarea id="other_des" placeholder="其他說明"></textarea></h4>
+        <h4>元件照片：<input id="add_part-pic" type="file" required></h4>
+        <button id="add_part-finish">添加元件至資料庫</button><button id="reset_add_form">清除此表單</button>
+    </div>
+    <h2>元件列表：</h2>
+    <h3>搜尋零件： <input type="text" id="search_inp"><button id="search_but">搜索</button></h3>
+    
+    <table id="ele_list">
+        <tbody id="ele_list_i">
+            
+        </tbody>
+    </table>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        .general{
+            color: blue;
+        }
+        .warming{
+            color: red;
+        }
+        #ele_list td{
+            border: 2px;
+            border-radius: 10px;
+            padding: 10px;
+            border-color: black;
+            border-style: groove;
+            min-width: 300px;
+            
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.qrcode.min.js"></script>
+    <script src="index.js"></script>
+    <script src="deleteele.js"></script>
+    <script src="qrcodespawn.js"></script>
+</body>
+</html>
