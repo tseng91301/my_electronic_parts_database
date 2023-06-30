@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     $db = new SQLite3($db_loc);
     if($change_sec=="name"){
-        $initial_name=$db->query("SELECT * FROM parts WHERE name='$change_name'");
+        $initial_name=$db->query("SELECT * FROM parts WHERE name='$change_val'");
             //轉換查詢結果為Array
         $res_json_1=[];
         $tmp=0;
