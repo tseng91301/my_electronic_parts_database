@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRcode列印區</title>
+</head>
+<body>
+    <div id="print_fin">
+        <table>
+            <tbody id="print_fin-tb"></tbody>
+        </table>
+    </div>
+    <style>
+        #print_fin{
+            max-width: 21.7cm;
+        }
+        #print_fin td{
+            max-width: 2.5cm;
+            padding: 5px;
+            border: 2px;
+            border-style: inset;
+            border-color: black;
+        }
+    </style>
+    <div id="print_del">
+        以選擇的電子元件(點一下元件名稱以移除)：<button id="printsel">列印選擇的元件QRcode</button><input type="checkbox" checked id="qualify_check"> 優化列印
+        <div id="selected"></div>
+        選擇電子元件(綠色為已選擇的)：<button id="ele_all_select">全選</button>
+        <div id="ele_sel-search">
+            <input id="ele_sel-search_inp" type="text" placeholder="輸入電子元件名稱"><button id="ele_sel-search_but">搜尋</button>
+            <div id="ele_sel-search_res"></div>
+        </div>
+        <style>
+            #ele_sel-search{
+                border: 3px;
+                border-style: double;
+                border-radius: 10px;
+                border-color: black;
+            }
+        </style>
+        <div id="ele_sel"></div>
+    </div>
+    <style>
+        .sealed{
+            z-index: -1;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.qrcode.min.js"></script>
+    <script src="qrcodespawn.js"></script>
+    <script src="printsec.js"></script>
+</body>
+</html>

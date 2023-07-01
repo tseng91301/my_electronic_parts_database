@@ -5,6 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 檢查文件是否成功上傳
     $filename;
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] == UPLOAD_ERR_OK) {
+
+        
         // 獲取上傳的文件信息
         $file = $_FILES["image"];
         
@@ -14,15 +16,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmpFilePath = $file["tmp_name"];
         //echo($tmpFilePath);
         
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
         // 移動文件到目標目錄
+
+        
+        $filename=generate_img_name().'.'.$extension;
         $targetDir = $img_path."images/"; // 目標目錄的路徑
         $targetPath = $targetDir . $filename;
         move_uploaded_file($tmpFilePath, $targetPath);
         
+        
         // 在這裡進行其他文件處理操作，如存儲到數據庫等
     } else {
-        echo("[E0]");
-        return;
+        $filename="null";
+        //echo("[E0]");
+        //return;
     }
     $name=$_POST['name'];
     $name=escapeshellcmd($name);

@@ -75,9 +75,7 @@ $(document).ready(function(){
         delid=$("#eleid").val();
         deleteid2(delid)
             .then(function(){
-                history.back();
-                history.back();
-                history.back();
+                location.href="http://tbsapi.ddns.net:4765/";
             })
             .catch(function(error){
                 console.log("Error: "+error);

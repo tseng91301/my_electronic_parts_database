@@ -42,6 +42,39 @@ $(document).ready(function(){
         });
     });
 
+    //更改元件圖片
+    $("#chg_part-pic_sub").click(function(){
+        var imageinput1=document.getElementById("chg_part-pic");
+        var imageinput=imageinput1.files[0];
+        var formData = new FormData();
+        formData.append('sec','pic_li');
+        formData.append('id',$("#eleid").val());
+        formData.append('image',imageinput);
+        $.ajax({
+            url: 'change_property.php',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend:()=>{
+                $("#chg_part-pic_sub").html("圖片上傳中...");
+            },
+            success: function(response) {
+                console.log(response);
+                console.log('上传成功');
+                $("#chg_part-pic_sub").html("更改圖片");
+                handleerror(response);
+                // 处理成功响应
+            },
+            error: function(xhr, status, error) {
+              console.log('上传出错:', error);
+              $("#chg_part-pic_sub").html("更改圖片");
+              // 处理错误响应
+            }
+            
+        });
+    })
+
     //變更元件說明
     $("#change_des_but").click(function(){
         change_des();

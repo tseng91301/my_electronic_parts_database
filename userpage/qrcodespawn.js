@@ -18,3 +18,9 @@ function spawnimgqr(imgid,inf,widhi=80){
 
     $qrcodeImg.attr("src", qrcodeSrc); // 將QR碼圖像設置為<img>元素的src屬性
 }
+function spawnimgqr_promise(imgid,inf,widhi=80){
+    return new Promise(function(resolve, reject) {
+        spawnimgqr(imgid,inf,widhi);
+        resolve(1);
+    });
+}

@@ -46,7 +46,7 @@
         <button id="show_img_butt">顯示圖片</button>
     </div><?php
     $img_url="watchimg.php?img_name=".$res_json_1[0]['picture_link'];
-    echo("<script>var img_place_url='$img_url';</script>");?></h2>
+    echo("<script>var img_place_url='$img_url';</script>");?></h2><input id="chg_part-pic" type="file"><button id="chg_part-pic_sub">更改圖片</button>
     <h2>使用此零件</h2>
     <input type="hidden" id="eleid" <?php
     
